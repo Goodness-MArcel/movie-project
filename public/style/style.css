@@ -1,0 +1,868 @@
+nav {
+  background-color: rgb(3, 13, 23);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logo span {
+  color: rgb(219, 230, 235);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.logo span h1 {
+  margin-left: 0px;
+}
+
+.half {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.nav-container {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+.nav-container .active {
+  color: rgb(179, 209, 111) !important;
+}
+.nav-container .link {
+  color: rgb(219, 230, 235);
+  height: 100px;
+  display: block;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-container .link:hover {
+  color: rgb(179, 209, 111);
+}
+.nav-container li:hover .sub-item {
+  display: block;
+}
+.nav-container .sub-item {
+  list-style: none;
+  display: none;
+  border-top: 2px solid rgb(179, 209, 111);
+  position: absolute;
+  top: 100px;
+  height: 100px;
+  width: 300px;
+  padding: 10px 10px;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 100;
+}
+.nav-container .sub-item a {
+  text-decoration: none;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(219, 230, 235);
+  display: block;
+  padding: 10px 10px;
+}
+.nav-container .sub-item a:hover {
+  background-color: rgb(219, 230, 235);
+  color: rgb(179, 209, 111);
+}
+.nav-container .sub-item li {
+  margin-bottom: 10px;
+}
+
+.login label {
+  color: rgb(219, 230, 235);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.login button {
+  padding: 10px 13px;
+  border-radius: 50px;
+  background-color: rgb(221, 0, 62);
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(219, 230, 235);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+form[action="action_page.php"] {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+.banner {
+  background-image: url(../asset/wallhaven.jpg);
+  height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -o-border-image: linear-gradient(rgba(3, 15, 27, 0.6), rgb(3, 15, 27)) 1;
+     border-image: linear-gradient(rgba(3, 15, 27, 0.6), rgb(3, 15, 27)) fill 1;
+}
+.banner form.searchdiv {
+  width: 72.3%;
+  border: 4px solid rgb(3, 13, 23);
+  margin: auto;
+  height: 60px;
+  display: flex;
+  position: relative;
+}
+.banner form.searchdiv input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.banner form.searchdiv .btn-search {
+  position: absolute;
+  right: 0;
+  bottom: 10.1px;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+.banner form.searchdiv .btn-search ion-icon {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(219, 230, 235);
+}
+.banner form.searchdiv .btn-search ion-icon:hover {
+  color: black;
+}
+.banner .name_movie {
+  padding: 0 34px;
+  color: rgb(219, 230, 235);
+  background-color: hsl(211, 40%, 23%);
+  text-transform: capitalize;
+  border: thin solid red;
+}
+.banner input[type=search] {
+  background-color: hsl(211, 40%, 23%);
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  margin: 0;
+  color: rgb(219, 230, 235);
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.banner ::-moz-placeholder {
+  color: rgb(219, 230, 235);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  margin-left: 100px;
+  text-transform: capitalize;
+}
+.banner ::placeholder {
+  color: rgb(219, 230, 235);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  margin-left: 100px;
+  text-transform: capitalize;
+}
+
+.swiper-container {
+  width: 70%;
+  height: 50.5vh;
+  position: relative;
+  margin: 70px auto;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-wrapper :nth-child(1) {
+  background-color: #b34343;
+}
+
+.swiper-wrapper .card1 {
+  background-color: rgba(255, 165, 0, 0.5);
+}
+
+.swiper-wrapper .card2 {
+  background-color: greenyellow;
+}
+
+.swiper-wrapper .card1 {
+  background-color: skyblue;
+}
+
+.swiper-wrapper .card1 {
+  background-color: purple;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 1s ease;
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.2);
+}
+
+.generes {
+  height: auto;
+  width: 90%;
+  margin: auto;
+  gap: 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.generes .blog-aside {
+  grid-row: span 2;
+}
+.generes .blog-aside h3 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  border-bottom: thin solid rgb(219, 230, 235);
+}
+.generes .blog-aside .celebrities {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.generes .blog-aside .celebrities p {
+  text-align: end;
+}
+.generes .blog-aside .celebrities .celeb {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: start;
+  gap: 20px;
+}
+.generes .blog-aside .celebrities .celeb h3 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+  text-decoration: none;
+  border: none;
+}
+.generes .blog-aside .celebrities .celeb h3:hover {
+  color: rgb(179, 209, 111);
+}
+.generes .blog-aside .celebrities .celeb .img-box {
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.generes .blog-aside .celebrities .celeb .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.generes .item .movie_gener li {
+  cursor: pointer;
+  color: rgb(179, 209, 111);
+  font-size: 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+}
+.generes .item .movie_gener li.active {
+  color: white;
+}
+.generes .item iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.generes .item form {
+  margin-top: 15px;
+}
+.generes .item form .active {
+  color: rgb(179, 209, 111);
+}
+.generes .item form button {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+}
+.generes .item .head {
+  display: flex;
+  justify-content: space-between;
+}
+.generes .item .head a {
+  text-decoration: none;
+  color: rgb(219, 230, 235);
+}
+.generes .item .head a small {
+  color: rgb(219, 230, 235);
+}
+.generes .item .movie-cat {
+  display: flex;
+  gap: 10px;
+}
+.generes .item .movie-cat .list-movie {
+  width: 150px;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+.generes .item .movie-cat .list-movie img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.generes .item .movie-cat .list-movie .hover-div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  z-index: 2;
+  background-color: rgb(3, 15, 27);
+  place-content: center;
+  text-align: center;
+}
+.generes .item .movie-cat .list-movie .hover-div button {
+  padding: 10px 13px;
+  border-radius: 50px;
+  background-color: rgb(221, 0, 62);
+  border: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+  text-transform: uppercase;
+  color: rgb(219, 230, 235);
+}
+.generes .item .movie-cat .list-movie:hover .hover-div {
+  display: block;
+}
+.generes h3 {
+  color: rgb(219, 230, 235);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.generes ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin-top: 20px;
+}
+.generes ul li a {
+  color: rgb(219, 230, 235);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.generes ul .active {
+  color: rgb(179, 209, 111);
+}
+.generes .advert {
+  width: 100%;
+  height: 200px;
+  background-color: orangered;
+}
+
+section.sectionpart2 {
+  height: 80vh;
+  margin: 80px auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 50% 50%;
+  gap: 20px;
+}
+section.sectionpart2 .item {
+  overflow: hidden;
+  border-radius: 7px;
+}
+section.sectionpart2 .span-2-row {
+  grid-row: span 2;
+}
+section.sectionpart2 .span-2-row img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.sectionpart2 .item1 h2 {
+  margin-bottom: 40px;
+}
+section.sectionpart2 .item1 h4 {
+  margin-bottom: 20px;
+  color: rgb(73, 122, 179);
+}
+section.sectionpart2 .item1 .year {
+  margin-bottom: 20px;
+}
+section.sectionpart2 .item1:hover h4 {
+  color: rgb(179, 209, 111);
+}
+section.sectionpart2 .item3 .news_box {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  padding-block: 4rem;
+}
+section.sectionpart2 .item3 .news_box .news h5 {
+  color: rgb(73, 122, 179);
+}
+section.sectionpart2 .item3 .news_box .news h5:hover {
+  color: rgb(179, 209, 111);
+}
+section.sectionpart2 .item3 .news_box .news p {
+  color: rgb(131, 128, 128);
+}
+section.sectionpart2 .item3 .heads {
+  display: flex;
+  justify-content: space-between;
+}
+section.sectionpart2 .item3 .heads h2.seeall {
+  font-weight: 200;
+  font-size: 1.3rem;
+}
+section.sectionpart2 .item3 .heads h2.seeall a {
+  color: rgb(131, 128, 128);
+  text-decoration: none;
+}
+
+section.sectionpart2 > * {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 900px) {
+  section.sectionpart2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+    gap: 40px;
+  }
+  section.sectionpart2 .span-2-row {
+    height: 300px;
+    width: 80%;
+    display: flex;
+    justify-content: start;
+  }
+  section.sectionpart2 .span-2-row img {
+    width: 50%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section.sectionpart2 .item {
+    width: 100%;
+    margin: auto;
+  }
+  section.sectionpart2 .item .news_box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 4rem;
+  }
+}
+@media (max-width: 600px) {
+  section.generes {
+    display: flex;
+    flex-direction: column;
+    border: thin solid red;
+    height: auto;
+    width: 80%;
+  }
+  .movie-cat {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+  }
+  .hover-div {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media (min-width: 600px) and (max-width: 992px) {
+  .generes {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr;
+    border: thin solid;
+    width: 90%;
+  }
+  .in_generes {
+    grid-column: span 3;
+  }
+  .blog-aside {
+    grid-row: span 1;
+    display: none;
+  }
+  .youtube {
+    grid-column: span 3;
+    height: 500px;
+  }
+  .movie-cat > * {
+    flex: 0 0 auto;
+  }
+}
+.movieLayout {
+  width: 68%;
+  height: 70vh;
+  margin: 10px auto;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.movieLayout .title {
+  width: 50%;
+  place-content: center;
+}
+.movieLayout .title small {
+  color: rgb(179, 209, 111);
+}
+.movieLayout .title h1 {
+  text-transform: uppercase;
+}
+.movieLayout .title .intels {
+  display: flex;
+  gap: 10px;
+  justify-content: start;
+  padding: 10px 0;
+}
+.movieLayout .title .intels span {
+  border: thin solid yellowgreen;
+  padding: 5px 5px;
+  margin: 0;
+}
+.movieLayout .imgbox {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.movieLayout .imgbox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .movieLayout {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 90%;
+  }
+  .imgbox {
+    width: 100% !important;
+  }
+  .title {
+    width: 100% !important;
+  }
+}
+footer {
+  margin-top: 120px;
+  border: thin solid;
+  height: 50vh;
+  background-image: url(../asset/wallhaven.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -o-border-image: linear-gradient(to right, rgba(3, 15, 27, 0.9), rgb(3, 15, 27)) 1;
+     border-image: linear-gradient(to right, rgba(3, 15, 27, 0.9), rgb(3, 15, 27)) fill 1;
+}
+footer .container {
+  width: 90%;
+  margin: auto;
+  place-content: center;
+  height: 50vh;
+}
+footer .container .useful-link {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+footer .container .useful-link .head {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: thin solid red;
+}
+footer .container .useful-link .head img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer .container .useful-link .item2 {
+  position: relative;
+  top: -10px;
+}
+footer .container .useful-link .item3 {
+  position: relative;
+  top: -25px;
+}
+footer .container .useful-link ul {
+  list-style: none;
+}
+footer .container .useful-link ul form {
+  margin-top: 45px;
+  position: relative;
+}
+footer .container .useful-link ul form input {
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+  background: transparent;
+  border: thin solid rgb(219, 230, 235);
+  outline: none;
+}
+footer .container .useful-link ul form input:focus {
+  border: 2px solid rgb(179, 209, 111);
+}
+footer .container .useful-link ul form input::-moz-placeholder {
+  font-size: 1rem;
+  font-family: "Dosis", sans-serif;
+  text-transform: capitalize;
+}
+footer .container .useful-link ul form input::placeholder {
+  font-size: 1rem;
+  font-family: "Dosis", sans-serif;
+  text-transform: capitalize;
+}
+footer .container .useful-link ul form ion-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 35px;
+  z-index: 3;
+}
+footer .container .useful-link ul form button {
+  background: transparent;
+  border: none;
+  color: rgb(221, 0, 62);
+  margin: 0px 0px 0px 0px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  padding: 0;
+}
+footer .container .useful-link ul li {
+  margin: 10px 0;
+}
+footer .container .useful-link ul li a {
+  color: rgb(219, 230, 235);
+  text-decoration: none;
+}
+footer .container .useful-link ul li a:hover {
+  color: rgb(179, 209, 111);
+}
+
+@media (max-width: 600px) {
+  .newsletter {
+    padding-block: 2rem;
+  }
+  .newsletter ul {
+    position: relative;
+  }
+  .newsletter ul li {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 900px) {
+  footer {
+    height: 40vh;
+    background-size: cover;
+    background-repeat: repeat;
+    padding-block: 3rem;
+    place-content: center;
+    background: none;
+  }
+  .useful-link {
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+  .useful-link .head {
+    display: none;
+  }
+  .useful-link .item {
+    width: 80%;
+    border-bottom: 0.5px solid rgb(219, 230, 235);
+    margin: 7px auto;
+    text-align: center;
+    max-width: 400px;
+  }
+  .useful-link .item li {
+    margin-top: 0;
+  }
+  .useful-link .item li a {
+    font-size: 0.8rem;
+  }
+  .useful-link .item h3 {
+    color: rgb(179, 209, 111);
+  }
+  .useful-link .item form {
+    margin-top: 0;
+  }
+  .useful-link .newsletter {
+    margin: 0;
+    border-bottom: none;
+  }
+}
+@media (max-width: 992px) {
+  .head {
+    display: none;
+  }
+  footer {
+    width: auto;
+  }
+  .useful-link {
+    width: 100%;
+    justify-content: start;
+  }
+  .useful-link > * {
+    flex: 0 0 auto;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  overflow-x: hidden;
+  background-color: rgb(3, 13, 23);
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: rgb(219, 230, 235);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,176 @@
+@import './variable';
+
+footer{
+    margin-top: 120px;
+    border: thin solid ;
+    height: 50vh;
+    background-image: url(../asset/wallhaven.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    border-image: linear-gradient(
+        to right,
+        rgba(3, 15, 27,0.9),
+        $overlay2
+
+    ) fill 1;
+    .container{
+        width: 90%;
+        margin: auto;
+        place-content: center;
+        height: 50vh;
+        .useful-link{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+           .head{
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border: thin solid red;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+           }
+            .item2{
+                position: relative;
+                top: -10px;
+            }
+            .item3{
+                position: relative;
+                top: -25px;
+            }
+            ul{
+                list-style: none;
+                form{
+                    margin-top: 45px;
+                    position: relative;
+                    input{
+                        padding: 10px 0;
+                        width: 100%;
+                        border-radius: 5px;
+                        background: transparent;
+                        border: thin solid $mainfontcolor;
+                        outline: none;
+                        &:focus{
+                            border:2px solid $activelink;
+                        }
+                        &::placeholder{
+                            font-size: 1rem;
+                            font-family: "Dosis", sans-serif;
+                            text-transform: capitalize;
+                        }
+                    }
+                    ion-icon{
+                        position: absolute;
+                        right: 10px;
+                        bottom: 35px;
+                        z-index: 3;
+                    }
+                    button{
+                        background: transparent;
+                        border: none;
+                        color: $button;
+                        margin: 0px 0px 0px 0px;
+                        font-size: .8rem;
+                        text-transform: capitalize;
+                        padding: 0;
+                    }
+                }
+                li{
+                    margin: 10px 0;
+                    a{
+                        color: $mainfontcolor;
+                        text-decoration: none;
+                        &:hover{
+                            color: $activelink;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Responsive for mobile device
+
+@media  (max-width:600px) {
+    .newsletter{
+       padding-block: 2rem;
+        ul{
+            li{
+                margin-bottom: 0;
+            }
+            position: relative;
+        }
+    }
+    
+}
+
+@media  (max-width:900px) {
+    footer{
+       height: 40vh;
+       background-size: cover;
+       background-repeat: repeat;
+       padding-block: 3rem;
+       place-content: center;
+       background: none;
+    }
+    .useful-link{
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        .head{
+            display: none;
+        }
+        .item{
+            width: 80%;
+            border-bottom: .5px solid $mainfontcolor;
+            margin: 7px auto;
+            text-align: center;
+            max-width: 400px;
+            li {
+                margin-top: 0;
+                a{
+                    font-size: .8rem;
+                }
+            }
+            h3{
+                color: $activelink;
+            }
+            form{
+                margin-top: 0;
+            }
+        }
+        
+        .newsletter{
+            margin: 0;
+            border-bottom: none;
+        }
+    }
+   
+}
+
+@media (max-width: 992px) {
+    .head{
+        display: none;
+    }
+    footer{
+        width: auto;
+    }
+    .useful-link{
+        width: 100%;
+        justify-content:start;
+        &>*{
+            flex: 0 0 auto;
+        }
+    }
+
+}

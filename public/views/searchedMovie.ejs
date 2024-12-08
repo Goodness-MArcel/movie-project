@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+<p style="text-align: center;">Search Results for "<%= x %>"</p>
+
+<% movie.results.forEach(ele=> {%>
+    <div class="movieLayout" style="gap: 20px;">
+        <div class="title" style="order: 3;">
+            <h1><%= ele.title %></h1>
+            <p><%= ele.overview %><p>
+            <p>Release Date: <%= ele.release_date %></p>
+        </div>
+        <div class="imgbox">
+             <img src="https://image.tmdb.org/t/p/w500<%= ele.poster_path %>"
+            alt="<%= ele.title %>">
+        </div>
+    </div> 
+<%})%>
+
+
+<%if(locals.errorMessage){%>
+    <div><%= errorMessage %></div>
+<% } %>
+
+
+
+
+
+<%- include('partials/footer.ejs') %>

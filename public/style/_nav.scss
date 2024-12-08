@@ -1,0 +1,191 @@
+@import './variable';
+
+@mixin flex(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    background-color: $bg;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+    @include flex();
+    
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logo span{
+    color: $mainfontcolor;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    h1{
+        margin-left: 0px;
+    }
+}
+.half{
+    @include flex();
+    gap: 18px;
+    // border: 1px solid gray;
+}
+.nav-container{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    .active{
+        color: $activelink !important;
+    }
+    .link{
+        color: $mainfontcolor;
+        height: 100px;
+        display: block;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: all .5s ease;
+        @include flex();
+        &:hover{
+            color: $activelink;
+        }
+       
+    }
+    li:hover .sub-item{
+        display: block;
+        // z-index: 100;
+    }
+
+    .sub-item{
+        list-style: none;
+        display: none;
+        border-top: 2px solid $activelink;
+        position: absolute;
+        top: 100px;
+        height: 100px;
+        width: 300px;
+        padding: 10px 10px;
+        background-color:white;
+        border-radius: 5px;
+        z-index: 100;
+        a{
+            text-decoration: none;
+            text-transform: capitalize;
+            text-align: center;
+            font-size: .9rem;
+            font-weight: 600;
+            color: $mainfontcolor;
+            display: block;
+            padding: 10px 10px;
+            &:hover{
+                background-color: $mainfontcolor;
+                color: $activelink;
+            }
+        }
+
+        li{
+            margin-bottom: 10px;
+        }
+    }
+
+}
+.login{
+    label{
+        color: $mainfontcolor;
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: 600;
+    }
+    button{
+      padding: 10px 13px;
+      border-radius: 50px;
+      background-color: $button;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      color: $mainfontcolor;
+      text-transform: uppercase;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+}
+
+//modal
+
+    form[action="action_page.php"] {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button[type='submit'] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}

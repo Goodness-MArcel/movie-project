@@ -1,0 +1,235 @@
+
+</main>
+<footer>
+    <div class="container">
+        <div class="useful-link">
+            <div class="header head">
+                <img src="/asset/logo.png" alt="">
+                <span>net</span>
+            </div>
+            <div class="item">
+                <div class="header">
+                    <h3>Resources</h3>
+                </div>
+                <ul>
+                    <li><a href="">About gnet</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Forums</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Help Center</a></li>
+                </ul>
+            </div>
+
+            <div class="item item2">
+                <div class="header">
+                    <h3>Account</h3>
+                </div>
+                <ul>
+                    <li><a href="">My Account</a></li>
+                    <li><a href="">Watchlist</a></li>
+                    <li><a href="">Collections</a></li>
+                    <li><a href="">User Guide</a></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div class="item item3">
+                <div class="header">
+                    <h3>Legal</h3>
+                </div>
+                <ul>
+                    <li><a href="">Terms of Use</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Security</a></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+          
+            <div class="item newsletter">
+                <div class="header ">
+                    <h3>Newsletter</h3>
+                </div>
+                <ul>
+                    <li><a href="">Subscribe to our newsletter system now to</a></li>
+                    <li><a href="">get latest news from us</a></li>
+                    <form action="" method="post">
+                        <input type="email" name="" id="" placeholder="enter your email">
+                        <ion-icon name="mail-open-outline"></ion-icon>
+                        <button>subscribe now</button>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="/script/main.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+        delay: 9000,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
+  }
+        
+    });
+
+    // document.addEventListener("DOMContentLoaded",
+    //     function(){
+    //         displayPopularmovieImgs(query);
+    //     }
+    // )
+    // function displayPopularmovieImgs(query){
+    //     const apiKey = 'b35c2aa93f6dc8587a94d9f400ee6ac8';
+    //     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
+    //     fetch(url)
+    //     .then(res => res.json())
+    //     .then(data =>{
+    //         displayImg(data.results);
+    //     })
+    //     .catch(error =>console.log('Error', error))
+    // }
+
+    // function displayImg(pictures){
+      
+    //     let Eachdiv ;
+    //     let div = document.querySelectorAll("swiper-slide");
+    //     for(let index = 0 ; index < div.length ; index++){
+    //         Eachdiv = div[index];
+    //     }
+    //     const baseUrl = 'https://image.tmdb.org/t/p/w500';
+    //     pictures.forEach(picture => {
+    //         const posterUrl = picture.poster_path ? `${baseUrl}${picture.poster_path}` : 'placeholder.jpg';
+    //         Eachdiv.innerHTML = `hfur
+    //           <img src="${posterUrl}" alt="${picture.title}"
+    //         `
+    //     });
+    // }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    displayPopularmovieImgs();
+});
+
+function displayPopularmovieImgs() {
+    const apiKey = 'b35c2aa93f6dc8587a94d9f400ee6ac8';
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            displayImg(data.results);
+        })
+        .catch(error => console.log('Error', error));
+}
+
+function displayImg(pictures) {
+    const divs = document.querySelectorAll(".swiper-slide");
+    const baseUrl = 'https://image.tmdb.org/t/p/w500';
+
+    divs.forEach((Eachdiv, index) => {
+        if (index < pictures.length) {
+            const picture = pictures[index];
+            const posterUrl = picture.poster_path ? `${baseUrl}${picture.poster_path}` : 'placeholder.jpg';
+            Eachdiv.innerHTML = `
+                <a href="/movieDescription/${picture.id}">
+                    <img src="${posterUrl}" alt="${picture.title}"/>
+                </a>
+            `;
+        }
+    });
+}
+
+const  genres = [
+    { id: 28, name: 'Action' },
+    { id: 12, name: 'Adventure' },
+    { id: 16, name: 'Animation' },
+    { id: 27, name: 'Horror' },
+    { id: 10752, name: 'war' },
+    {id: 35, name: 'comedy'},
+    {id: 18, name: 'Drama'},
+    {id: 10749, name: 'Romance'}
+];
+
+const apiKey = 'b35c2aa93f6dc8587a94d9f400ee6ac8';
+
+let activeLink = null ;
+function creatLi () {
+        let ul =  document.querySelector(".movie_gener");
+        genres.forEach((genre) => {
+        let li = document.createElement("li");
+        li.textContent = genre.name ;
+       
+        li.addEventListener("click" , function(e){
+            fetchMovies(genre.id);
+            if (activeLink) {
+          activeLink.classList.remove('active');
+        }
+        li.classList.add('active');
+        activeLink = li;
+            
+        })
+    ul.appendChild(li)
+  });
+}
+
+function fetchMovies(genreId){
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreId}`;
+    fetch(url)
+    .then(response => {
+        if(! response.ok){
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    } )
+    .then(data => {
+        displayMovies(data.results);
+    })
+   .catch(error => console.error('Error fetching movies:', error));
+
+}
+
+function  displayMovies(movie){
+    const divs = document.querySelectorAll(".list-movie");
+
+    divs.forEach((Eachdiv , index)=>{
+        const baseUrl = 'https://image.tmdb.org/t/p/w500';
+        if(index < movie.length) {
+            const movies = movie[index];
+            const posterUrl = movies.poster_path ? `${baseUrl}${movies.poster_path}` : 'placeholder.jpg';
+
+            Eachdiv.innerHTML = `<img src="${posterUrl}" alt="${movies.title}" />`;
+        }else{
+            Eachdiv.innerHTML = ''
+        }
+    })
+}
+creatLi();
+fetchMovies(28)
+
+
+</script>

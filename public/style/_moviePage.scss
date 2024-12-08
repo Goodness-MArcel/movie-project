@@ -1,0 +1,63 @@
+.movieLayout{
+    width: 68%;
+    height: 70vh;
+    margin:10px auto;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    // border: thin solid;
+    // box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+
+    .title{
+        width: 50%;
+        place-content: center;
+        
+        small{
+            color: $activelink;
+        }
+        h1{
+            text-transform: uppercase;
+        }
+        .intels{
+            display: flex;
+            gap: 10px;
+            justify-content: start;
+            padding: 10px 0;
+            span{
+                border: thin solid yellowgreen;
+                padding: 5px 5px;
+                margin: 0;
+            }
+        }
+    }
+    .imgbox{
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .movieLayout{
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 90%;
+    }
+
+    .imgbox{
+        width: 100% !important;
+    }
+    .title{
+        width:100% !important ;
+
+    }
+}

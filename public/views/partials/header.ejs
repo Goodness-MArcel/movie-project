@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script:wght@400..700&family=Dosis:wght@200..800&family=Playwrite+ES+Deco:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <nav>
+        <div class="half">
+            <div class="logo">
+                <img src="/asset/logo.png" alt="">
+                
+            </div>
+            <ul class="nav-container">
+                <li>
+                    <a class="link active" href="">home <ion-icon name="chevron-down-outline"></ion-icon></a>
+                    <ul class="sub-item">
+                        <li><a href="/">home movie</a></li>
+                        <li><a href="">foreign movie</a></li>
+                    </ul>
+                </li>
+    
+                <li>
+                    <a class="link" href="">movie <ion-icon name="chevron-down-outline"></ion-icon></a>
+                    <ul class="sub-item">
+                        <li><a href="">action movie</a></li>
+                        <li><a href="">epic movie</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="link" href="">celebrities</a>
+                    <ul class="sub-item">
+                        <li><a href="">celebrity list</a></li>
+                        <li><a href="">celebrity grid</a></li>
+                    </ul>
+                </li>
+    
+                <li>
+                    <a class="link" href="">news <ion-icon name="chevron-down-outline"></ion-icon></a>
+                    <ul class="sub-item">
+                        <li><a href="">news list </a></li>
+                        <li><a href="">news grid</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="login">
+            <label for="">my account</label>
+            <button value="" id="openModal" data-bs-toggle="modal" data-bs-target="#myModal" >login</button>
+        </div>
+          <!-- modal section -->
+           <div class="modal fade " id="myModal">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <!-- <h4 class="modal-title">Modal Heading</h4> -->
+              <button type="button" class="btn-close" class="btn-close" data-bs-dismiss="modal" ></button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="action_page.php" method="post">
+                    <div class="imgcontainer">
+                      <img src="../m" alt="Avatar" class="avatar">
+                    </div>
+                  
+                    <div class="container">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" placeholder="Enter Username" name="uname" required>
+                  
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                  
+                      <button type="submit">Login</button>
+                      <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                      </label>
+                    </div>
+                  
+                    <div class="container" style="background-color:#f1f1f1">
+                      <button type="button" class="cancelbtn">Cancel</button>
+                      <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="/script/main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
