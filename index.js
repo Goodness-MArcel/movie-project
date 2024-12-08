@@ -16,8 +16,7 @@ app.use(express.static("public"));
 // Update your Express app configuration to set the correct views directory:
 app.set('views', path.join(__dirname, 'public', 'views'));
 
-const PORT = 3000;
-const HOSTNAME = `127.0.0.5`;
+
 
 app.get("/",(req , res)=>{
     res.render(
@@ -78,7 +77,9 @@ app.post("/show_movie", async (req,res)=>{
 
 // Route to display action movies poster
 
-app.listen(PORT , HOSTNAME , ()=>{
-    console.log(`server running on port http://${HOSTNAME}:${PORT}`);
+const PORT = process.env.PORT || 3000; // Use the port provided by Vercel or fallback to 3000
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
 
